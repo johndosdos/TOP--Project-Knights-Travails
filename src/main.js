@@ -26,7 +26,7 @@ function notation_to_array_coordinates(notation) {
   const RANK = 8 - parseInt(notation[1]);
   const FILE = notation.charCodeAt(0) - "a".charCodeAt(0);
 
-  return [RANK, FILE];
+  return [FILE, RANK];
 }
 function main() {
   knight_moves("a1", "b3");
