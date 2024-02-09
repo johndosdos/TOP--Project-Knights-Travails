@@ -70,6 +70,8 @@ function get_valid_knight_moves(source_x, source_y, chess_board) {
       move.source_y >= 0 &&
       move.source_y < chess_board.length
     );
+  }).map(function (coordinate) {
+    return [coordinate.source_x, coordinate.source_y];
   });
 }
 
