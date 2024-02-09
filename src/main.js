@@ -3,11 +3,13 @@
 
 /**
  *
- * @param {number[]} x
- * @param {number[]} y
+ * @param {string} source
+ * @param {string} destination
  */
-function knightMoves(x, y) {}
-
-function main() {}
+function knight_moves(source, destination) {
+ */
+function main() {
+  knight_moves("a1", "b3");
+}
 
 main();
