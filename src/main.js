@@ -81,6 +81,7 @@ function get_valid_knight_moves(source_x, source_y, chess_board) {
  * @param {number[]} source
  * @param {number[]} destination
  * @param {number[][]} chess_board
+ * @returns {number[][] | null}
  */
 function bfs(source, destination, chess_board) {
   const QUEUE = [];
@@ -105,7 +106,7 @@ function bfs(source, destination, chess_board) {
           temp = PARENT[temp];
         }
 
-        return FINAL_PATH.reverse();
+        if (FINAL_PATH) return FINAL_PATH.reverse();
       }
 
       const VALID_MOVES = get_valid_knight_moves(
