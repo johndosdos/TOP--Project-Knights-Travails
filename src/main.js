@@ -34,7 +34,6 @@ function knight_moves(source, destination) {
  * @returns {string[]}
  */
 function array_coordinates_to_notation(coordinates) {
-  coordinates;
   let notation_array = [];
   let file = "";
   let rank = 0;
