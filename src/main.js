@@ -29,6 +29,30 @@ function knight_moves(source, destination) {
 
 /**
  *
+ * @param {number[][] | null} coordinates
+ * @returns {string[]}
+ */
+function array_coordinates_to_notation(coordinates) {
+  coordinates;
+  let notation_array = [];
+  let file = "";
+  let rank = 0;
+  if (coordinates)
+    notation_array = coordinates.map(function (element) {
+      const TEMP_FILE = "a".charCodeAt(0) + element[0];
+      file = String.fromCharCode(TEMP_FILE);
+
+      const TEMP_RANK = 8 - element[1];
+      rank = TEMP_RANK;
+
+      return [file, rank].join("");
+    });
+
+  return notation_array;
+}
+
+/**
+ *
  * @param {string} notation
  * @returns {number[]}
  */
