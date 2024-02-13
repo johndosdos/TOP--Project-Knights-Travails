@@ -16,11 +16,13 @@ function knight_moves(source, destination) {
   const SOURCE_COORDINATES = notation_to_array_coordinates(source);
   const DESTINATION_COORDINATES = notation_to_array_coordinates(destination);
 
-  const VALID_KNIGHT_MOVES = get_valid_knight_moves(
-    SOURCE_COORDINATES[0],
-    SOURCE_COORDINATES[1],
+  const FINAL_PATH = bfs(
+    SOURCE_COORDINATES,
+    DESTINATION_COORDINATES,
     CHESS_BOARD
   );
+
+  return FINAL_PATH;
 }
 
 //HELPER FUNCTIONS
