@@ -5,6 +5,7 @@
  *
  * @param {string} source
  * @param {string} destination
+ * @returns {string[]}
  */
 function knight_moves(source, destination) {
   const CHESS_BOARD = Array.from({ length: 8 }, function () {
@@ -22,7 +23,7 @@ function knight_moves(source, destination) {
     CHESS_BOARD
   );
 
-  return FINAL_PATH;
+  return array_coordinates_to_notation(FINAL_PATH);
 }
 
 //HELPER FUNCTIONS
