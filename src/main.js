@@ -128,7 +128,8 @@ function bfs(source, destination, chess_board) {
 /////////////////
 
 function main() {
-  knight_moves("a1", "b3");
+  const OUTPUT = knight_moves("a1", "c3");
+  console.log(OUTPUT);
 }
 
 main();
