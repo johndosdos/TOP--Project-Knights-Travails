@@ -124,6 +124,8 @@ function bfs(source, destination, chess_board) {
       QUEUE.push(...VALID_MOVES);
     }
   }
+
+  return null;
 }
 
 /////////////////
