@@ -75,6 +75,54 @@ function get_valid_knight_moves(source_x, source_y, chess_board) {
   });
 }
 
+/**
+ * @param {number[]} source
+ * @param {number[]} destination
+ * @param {number[][]} chess_board
+ */
+function bfs(source, destination, chess_board) {
+  const QUEUE = [];
+  const VISITED = new Set();
+  const PARENT = {};
+
+  QUEUE.push(source);
+  PARENT[source] = null;
+
+  while (QUEUE.length) {
+    const CURRENT = QUEUE.shift();
+
+    if (CURRENT) {
+      VISITED.add(CURRENT.toString());
+
+      if (CURRENT.toString() === destination.toString()) {
+        const FINAL_PATH = [];
+        let temp = CURRENT;
+        while (temp !== null && temp.toString()) {
+          FINAL_PATH.push(temp);
+
+          temp = PARENT[temp];
+        }
+
+        return FINAL_PATH.reverse();
+      }
+
+      const VALID_MOVES = get_valid_knight_moves(
+        CURRENT[0],
+        CURRENT[1],
+        chess_board
+      );
+
+      VALID_MOVES.forEach(function (element) {
+        if (!VISITED.has(element.toString())) {
+          PARENT[element] = CURRENT;
+        }
+      });
+
+      QUEUE.push(...VALID_MOVES);
+    }
+  }
+}
+
 /////////////////
 
 function main() {
